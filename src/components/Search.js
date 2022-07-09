@@ -21,7 +21,6 @@ function Search() {
           onChange={(e) => setQuery(e.target.value)}
         />
       </form>
-      <button>clear search</button>
     </div>
   )
 }
