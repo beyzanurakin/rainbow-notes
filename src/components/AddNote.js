@@ -1,5 +1,4 @@
 import { nanoid } from '@reduxjs/toolkit'
-import { Button, Form, ButtonGroup } from 'react-bootstrap'
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -31,15 +30,15 @@ const AddNote = () => {
   }
   return (
     <>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Control
+      <form onSubmit={handleSubmit}>
+        <div className='add-note'>
+          <textarea
+            className='add-note'
             style={{ backgroundColor: `${color}` }}
-            className='note'
             value={newNote}
             onChange={(e) => setNewNote(e.target.value)}
-          ></Form.Control>
-          <ButtonGroup>
+          ></textarea>
+          <div className='buttons'>
             <button
               type='button'
               className='violet'
@@ -89,10 +88,12 @@ const AddNote = () => {
             >
               Red
             </button>
-          </ButtonGroup>
-          <Button type='submit'>ADD NOTE</Button>
-        </Form.Group>
-      </Form>
+          </div>
+          <button className='save' type='submit'>
+            ADD NOTE
+          </button>
+        </div>
+      </form>
     </>
   )
 }

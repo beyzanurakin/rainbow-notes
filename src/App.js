@@ -1,18 +1,15 @@
-import { Container, Row } from 'react-bootstrap'
 import AddNote from './components/AddNote'
+import Header from './components/Header'
 import NoteList from './components/NoteList'
+import Search from './components/Search'
 
 function App() {
   return (
-    <div className='App'>
-      <Container>
-        <Row>
-          <AddNote />
-        </Row>
-        <Row>
-          <NoteList />
-        </Row>
-      </Container>
+    <div className='container'>
+      <Header />
+      <AddNote />
+      <Search />
+      <NoteList />
     </div>
   )
 }

@@ -14,7 +14,7 @@ export const notesSlice = createSlice({
         id: 2,
         title: 'note2',
         color: '#0000ff',
-        date: 'Wed Jul 28 1993',
+        date: 'Wed Jul 28 199',
       },
     ],
   },
@@ -27,8 +27,15 @@ export const notesSlice = createSlice({
       const filtered = state.notes.filter((note) => note.id !== id)
       state.notes = filtered
     },
+    searchNotes: (state, action) => {
+      const query = action.payload
+      const filtered = state.notes.filter((note) =>
+        note.title.toLowerCase().includes(query)
+      )
+      state.notes = filtered
+    },
   },
 })
 
-export const { addNote, removeNote } = notesSlice.actions
+export const { addNote, removeNote, searchNotes } = notesSlice.actions
 export default notesSlice.reducer
