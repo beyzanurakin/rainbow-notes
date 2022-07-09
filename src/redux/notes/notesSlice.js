@@ -6,15 +6,15 @@ export const notesSlice = createSlice({
     notes: [
       {
         id: 1,
-        title: 'note1',
+        title: 'note1 lorem ipsum',
         color: '#4b0082',
-        date: 'Wed Jul 28 1993',
+        date: '14:32',
       },
       {
         id: 2,
-        title: 'note2',
+        title: 'note2 dolor sir amet',
         color: '#0000ff',
-        date: 'Wed Jul 28 199',
+        date: '14:33',
       },
     ],
   },
