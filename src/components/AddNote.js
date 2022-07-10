@@ -29,9 +29,9 @@ const AddNote = () => {
     setColor('')
   }
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
-        <div className='add-note'>
+        <div className='add-note-area'>
           <textarea
             className='add-note'
             style={{ backgroundColor: `${color}` }}
@@ -94,7 +94,7 @@ const AddNote = () => {
           </button>
         </div>
       </form>
-    </>
+    </div>
   )
 }
 
