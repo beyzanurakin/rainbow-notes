@@ -17,6 +17,7 @@ export const notesSlice = createSlice({
         date: '14:33',
       },
     ],
+    query: '',
   },
   reducers: {
     addNote: (state, action) => {
@@ -28,11 +29,7 @@ export const notesSlice = createSlice({
       state.notes = filtered
     },
     searchNotes: (state, action) => {
-      const query = action.payload
-      const filtered = state.notes.filter((note) =>
-        note.title.toLowerCase().includes(query)
-      )
-      state.notes = filtered
+      state.query = action.payload
     },
   },
 })

@@ -1,26 +1,23 @@
 import React from 'react'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { searchNotes } from '../redux/notes/notesSlice'
 
 function Search() {
-  const [query, setQuery] = useState('')
   const dispatch = useDispatch()
+  const query = useSelector((state) => state.notes.query)
+
   const handleSearch = (e) => {
-    console.log(query)
     e.preventDefault()
-    dispatch(searchNotes(query))
-    setQuery('')
+    dispatch(searchNotes(e.target.value))
   }
   return (
     <div className='search'>
-      <form onSubmit={handleSearch}>
-        <input
-          type='text'
-          placeholder='Search...'
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </form>
+      <input
+        value={query}
+        type='text'
+        placeholder='Search...'
+        onChange={handleSearch}
+      />
     </div>
   )
 }
